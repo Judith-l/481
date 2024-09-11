@@ -1,0 +1,50 @@
+package Lab5;
+
+	import java.sql.DriverManager;
+
+import com.mysql.jdcb.driver*;
+	public class E 
+	{
+		E() //Default Ctor
+		{//TODO::Object member init
+		   String list = "SELECT * FROM Employee";
+			Statement stmt;
+
+		   try {
+		      System.out.println("Example 3");
+			  System.out.println("Using JDBC + MySQL on localhost");
+			  
+		      Class.forName("com.mysql.jdbc.Driver").newInstance();
+			} 
+			catch (Exception E) {
+	                    System.err.println("Unable to load driver.");
+	                    E.printStackTrace();
+	        } // end catch
+
+
+	 		try {
+	 			
+	 		Connection con = DriverManager.getConnection("jdbc:mysql://http://10.0.18.44/students10.0.19.74/db_abr04607",
+	                      "abr04607", "abr04607");
+	   // update statements go here
+	       // stmt = con.createStatement();
+	        
+	        //stmt.executeUpdate("INSERT INTO T_Reader VALUES( 8, 'Shakespeare', 'Ann')");///
+	   
+	   
+	   // end of update statements
+	 		
+	 		
+	 		con.close();
+	 		}catch(SQLException ex) {
+	 			System.err.println("SQLException: " + ex.getMessage());
+	 		} // catch
+	 
+	 
+	 
+
+		}
+
+		
+	}
+}
